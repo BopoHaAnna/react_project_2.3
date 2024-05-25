@@ -1,0 +1,74 @@
+/* app.module.css */
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.calculator {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+	margin-top: 20px;
+}
+
+.button {
+	width: 100px;
+	height: 50px;
+	font-size: 24px;
+	cursor: pointer;
+	border: 1px solid #eee;
+	border-radius: 10px;
+	background: linear-gradient(90deg, #ff85e4 0%, #229efd 179.25%);
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.button:hover {
+	background: linear-gradient(90deg, #209cff 0%, #68e0cf 100%);
+}
+
+.button:active {
+	background: linear-gradient(90deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+.wideButtonsContainer {
+	display: flex;
+	grid-column: span 3;
+	gap: 10px;
+}
+
+.wider {
+	width: 100%;
+}
+
+h1 {
+	color: gray;
+}
+
+.resultContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 80%;
+}
+
+.resultInput {
+	width: calc(100% - 20px);
+	height: 50px;
+	font-size: 40px;
+	text-align: right;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: #f9f9f9;
+	color: grey;
+	outline: none;
+}
+
+.result {
+	color: black;
+}
