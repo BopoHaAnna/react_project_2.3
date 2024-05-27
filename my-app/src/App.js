@@ -46,7 +46,17 @@ export const App = () => {
 		setOperand2('');
 		setIsResult(false);
 	};
-
+	const handleConditionButtonClick = (value) => {
+		if (value === '+' || value === '-') {
+			handleOperatorButtonClick(value);
+		} else if (value === '=') {
+			handleEqualsButtonClick();
+		} else if (value === 'C') {
+			handleResetButtonClick();
+		} else {
+			handleButtonClick(value);
+		}
+	};
 	const displayValue = `${operand1} ${operator} ${operand2} `;
 
 	return (
@@ -66,42 +76,12 @@ export const App = () => {
 				{data.map((item, index) => (
 					<button
 						key={item.id}
-						className={styles.button}
-						onClick={() => handleButtonClick(item.value)}
+						className={`${styles.button} ${item.value === 'C' || item.value === '=' ? styles.wider : ''}`}
+						onClick={() => handleConditionButtonClick(item.value)}
 					>
 						{item.value}
 					</button>
 				))}
-				<button
-					className={styles.button}
-					onClick={(event) =>
-						handleOperatorButtonClick(event.target.textContent)
-					}
-				>
-					-
-				</button>
-				<button
-					className={styles.button}
-					onClick={(event) =>
-						handleOperatorButtonClick(event.target.textContent)
-					}
-				>
-					+
-				</button>
-				<div className={styles.wideButtonsContainer}>
-					<button
-						className={`${styles.button} ${styles.wider}`}
-						onClick={() => handleEqualsButtonClick()}
-					>
-						=
-					</button>
-					<button
-						className={`${styles.button} ${styles.wider}`}
-						onClick={() => handleResetButtonClick()}
-					>
-						С
-					</button>
-				</div>
 			</div>
 		</div>
 	);

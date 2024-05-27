@@ -36,14 +36,10 @@
 	background: linear-gradient(90deg, #84fab0 0%, #8fd3f4 100%);
 }
 
-.wideButtonsContainer {
-	display: flex;
-	grid-column: span 3;
-	gap: 10px;
-}
-
 .wider {
-	width: 100%;
+	grid-column: span 3; /* Элемент занимает два столбца */
+	/* Подгоняем ширину элемента, чтобы он выглядел как 1.5 столбца */
+	width: calc(100% / 3 * 1.5);
 }
 
 h1 {
